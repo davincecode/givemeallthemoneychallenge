@@ -13,7 +13,7 @@ Added functionality:
 - The button should be disabled if the bar is at 100% or $500.
 - The button should be disabled if the bar is at 0% or $0.
 
-!["donationbox"](https://github.com/davincecode/givemeallthemoneychallenge/tree/master/public/screenshot.png)
+!["donationbox"](https://github.com/davincecode/givemeallthemoneychallenge/blob/835ed4b7e22d55bf293738713536072ff03a1c0b/public/screenshot.png)
 
 ### Getting Started
 
