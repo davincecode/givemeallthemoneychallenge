@@ -3,9 +3,9 @@ import { useState, createContext } from "react"
 export const DonationsContext = createContext()
 
 function DonationsContextProvider(props) {
-  const [amount, setAmount] = useState(0)
-  const [count, setCount] = useState(0)
-  const [total, setTotal] = useState(0)
+  const [amount, setAmount] = useState(0) // amount of money given
+  const [count, setCount] = useState(0) // number of donations
+  const [total, setTotal] = useState(0) // total amount of money given
 
   const calcTotal = () => {
     setTotal(amount + total)
@@ -15,7 +15,7 @@ function DonationsContextProvider(props) {
     setCount(count + 1)
   }
 
-  const fireClick = () => {
+  const countAndCalcState = () => {
     calcTotal()
     countUp()
   }
@@ -29,7 +29,7 @@ function DonationsContextProvider(props) {
     calcTotal,
     remaining,
     count,
-    fireClick,
+    countAndCalcState,
   }
 
   return (

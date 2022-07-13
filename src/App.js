@@ -1,10 +1,9 @@
 import "./App.scss"
-
 import { useContext } from "react"
 import { DonationsContext } from "./context/DonationsContext"
 
 function App() {
-  const { amount, setAmount, fireClick, total, remaining, count } =
+  const { amount, setAmount, countAndCalcState, total, remaining, count } =
     useContext(DonationsContext)
 
   return (
@@ -42,7 +41,7 @@ function App() {
             <button
               disabled={!amount}
               className="options-row__btn"
-              onClick={fireClick}
+              onClick={countAndCalcState}
             >
               Give Now
             </button>
