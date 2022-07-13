@@ -16,7 +16,11 @@ function DonationsContextProvider(props) {
   }
 
   const countUp = () => {
-    setCount(count + 1)
+    if (value === 0) {
+      fireClick().disabled = true
+    } else {
+      setCount(count + 1)
+    }
   }
 
   const fireClick = () => {

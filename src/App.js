@@ -39,7 +39,11 @@ function App() {
               }}
             />
 
-            <button className="options-row__btn" onClick={fireClick}>
+            <button
+              disabled={!amount}
+              className="options-row__btn"
+              onClick={fireClick}
+            >
               Give Now
             </button>
           </div>
