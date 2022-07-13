@@ -1,13 +1,60 @@
-import './App.css';
+import "./App.scss"
+
+import { useContext } from "react"
+import { DonationsContext } from "./context/DonationsContext"
 
 function App() {
+  const { amount, setAmount, fireClick, total, remaining, count } =
+    useContext(DonationsContext)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Give me all the money!</h1>
+    <div className="container">
+      <header>
+        <h1>Give us all the money!</h1>
       </header>
+
+      <section className="donation-wrapper">
+        <div className="donation-update">
+          <span className="font-bold">${remaining}</span> still needed for this
+          project
+        </div>
+
+        <div className="donation-content">
+          <progress className="progress-bar" value={total} max="500" />
+          <p>
+            <span className="font-bold highlight">Only 3 days left</span> to
+            fund this project.
+          </p>
+          <p>
+            Join the <span className="font-bold">{count || "0"}</span> other
+            donors who have already supported this project. Every dollar helps.
+          </p>
+
+          <div className="options-row">
+            <input
+              className="options-row__input"
+              value={amount}
+              onChange={(e) => {
+                setAmount(+e.target.value)
+              }}
+            />
+
+            <button className="options-row__btn" onClick={fireClick}>
+              Give Now
+            </button>
+          </div>
+          <p className="donation-content__question">
+            Why give ${amount || "0"}?
+          </p>
+        </div>
+
+        <div className="options-row">
+          <button className="btn">Save for later</button>
+          <button className="btn">Tell your friends</button>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
