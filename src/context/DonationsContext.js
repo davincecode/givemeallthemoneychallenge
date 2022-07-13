@@ -8,19 +8,11 @@ function DonationsContextProvider(props) {
   const [total, setTotal] = useState(0)
 
   const calcTotal = () => {
-    if (total >= 500) {
-      return "You have reached the goal!"
-    } else {
-      setTotal(amount + total)
-    }
+    setTotal(amount + total)
   }
 
   const countUp = () => {
-    if (value === 0) {
-      fireClick().disabled = true
-    } else {
-      setCount(count + 1)
-    }
+    setCount(count + 1)
   }
 
   const fireClick = () => {
