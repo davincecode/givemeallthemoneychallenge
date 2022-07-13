@@ -39,7 +39,7 @@ function App() {
             />
 
             <button
-              disabled={!amount}
+              disabled={!amount || amount > remaining}
               className="options-row__btn"
               onClick={countAndCalcState}
             >
